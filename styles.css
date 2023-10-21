@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --light-dark-color: #292929;
+    --box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.5);
+    --box-shadow-container: 0 0 5px rgba(0, 0, 0, 0.5);
+    --box-shadow-focus-button: 5px 5px 5px rgba(70, 169, 133, 0.5);
+    --light-grey-color: rgb(147, 145, 145);
+}
+
+.movieSearch {
+    display: flex;
+    justify-content: center;
+
+}
+
+.inputMovie {
+    margin: 20px;
+    width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--light-grey-color);
+    box-shadow: var(--box-shadow);
+    font-size: 16px;
+    position: relative;
+}
+
+.inputMovie:focus {
+    outline: 3px solid rgb(92, 120, 177);
+    box-shadow: 5px 5px 5px rgba(54, 108, 175, 0.474);
+    border: 1px solid rgb(157, 187, 240);
+}
+
+.getMovie {
+    margin: 20px;
+    height: 40px;
+    width: 600px;
+    background-color: rgb(13, 149, 104);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    box-shadow: var(--box-shadow);
+
+}
+
+.getMovie:hover {
+    background-color: rgb(20, 109, 82);
+    outline: 3px solid rgb(47, 185, 144);
+    /* pointer-events: none; */
+}
+
+.getMovie:focus {
+    background-color: rgb(57, 145, 118);
+    outline: 3px solid rgb(121, 188, 168);
+    box-shadow: var(--box-shadow-focus-button);
+}
+
+.cross {
+    width: 23px;
+    height: 23px;
+    background-image: url(./image/times.svg);
+    position: absolute;
+    top: 30px;
+    left: 660px;
+    color: rgb(208, 69, 69);
+}
+
+.container {
+    min-width: 1300px;
+    padding: 0 72px;
+    min-height: 900px;
+    margin: 20px auto;
+}
+
+.detail-container {
+    height: 650px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 400px rgba(0, 0, 0, 0.526);
+    padding: 30px;
+}
+
+/* Внутрішній бордер (другий бордер) */
+.detail-container::after {
+    content: "";
+    display: block;
+    width: 97%;
+    height: 95%;
+    position: absolute;
+    top: calc((650px - 650px * 0.95) / 2);
+    left: calc((1200px - 1200px * 0.97) / 2);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-container);
+}
+
+.movie-poster img {
+    width: 400px;
+    height: 590px;
+    box-shadow: var(--box-shadow-container);
+}
+
+.movie-info {
+    width: 670px;
+    height: 600px;
+}
+
+.movie-title {
+    height: 60px;
+    width: 100%;
+    background-color: var(--light-grey-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+}
+
+.movie-params {
+    font-size: 13px;
+    color: var(--light-grey-color);
+}
+
+.movie-description {
+    line-height: 1.5em;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.list-items {
+    height: 635px;
+    width: 300px;
+    box-shadow: var(--box-shadow-container);
+}
+
+.search-item-thumbnail {
+    display: block;
+    height: 429px;
+    box-shadow: 0px 0px 10px 4px rgb(58 57 57 / 50%);
+}
+
+.search-item-thumbnail img {
+    width: 300px;
+    height: 429px;
+}
+
+.search-item-info {
+    text-align: center;
+}
+
+.search-item-info h3 {
+    height: 60px;
+    width: 100%;
+    background-color: var(--light-grey-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.search-item-info p {
+    margin: 10px 0 15px;
+}
+
+.search-item-info p {
+    margin: 10px 0 15px;
+}
+
+.movies-detail {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(13, 149, 104);
+    border: none;
+    color: white;
+    font-size: 16px;
+    box-shadow: var(--box-shadow);
+}
+
+.movies-detail:hover {
+    background-color: rgb(20, 109, 82);
+    outline: 3px solid rgb(47, 185, 144);
+}
+
+.movies-detail:focus {
+    background-color: rgb(57, 145, 118);
+    outline: 3px solid rgb(121, 188, 168);
+    box-shadow: var(--box-shadow-focus-button);
+}
+
+
+.hidden {
+    display: none;
+}
