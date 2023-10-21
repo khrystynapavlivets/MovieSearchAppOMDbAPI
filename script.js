@@ -16,7 +16,7 @@ const detailInfo = document.querySelector('.detail-container');
 
 
 //OMDb API
-// http://www.omdbapi.com/?i=tt3896198&apikey=a84974eb
+// https://www.omdbapi.com/?i=tt3896198&apikey=a84974eb
 
 //ключ API з OMDb API
 const apiKey = 'a84974eb';
@@ -34,7 +34,7 @@ getS('.cross').addEventListener('click', () => {
 
 // Функція для завантаження списку фільмів з API
 async function loadMovies(searchTerm) {
-    const URL = `http://omdbapi.com/?s=${searchTerm}&apikey=a84974eb`;
+    const URL = `https://omdbapi.com/?s=${searchTerm}&apikey=a84974eb`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
     if (data.Response == "True") displayMovieList(data.Search);
@@ -93,7 +93,7 @@ function loadMovieDetails() {
                 detailInfo.classList.remove('hidden'); // Відображаємо контейнер для деталей
                 movieSearch.value = ""; // Очищаємо поле введення
 
-                const result = await fetch(`http://www.omdbapi.com/?i=${movieId}&apikey=a84974eb`);
+                const result = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=a84974eb`);
                 const movieDetails = await result.json();
                 console.log(movieDetails);
                 displayMovieDetails(movieDetails);
